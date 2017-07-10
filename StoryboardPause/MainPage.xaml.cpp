@@ -33,5 +33,10 @@ void StoryboardPause::MainPage::Grid_PointerPressed(Platform::Object^ sender, Wi
     static bool sPressed = false;
     sPressed = !sPressed;
 
-    VisualStateManager::GoToState(this, sPressed ? L"PointerOver" : L"Normal", e->GetCurrentPoint(this)->Properties->IsLeftButtonPressed);
+    bool transitionState = e->GetCurrentPoint(this)->Properties->IsLeftButtonPressed;
+
+    Platform::String^ isTransitionEnable = "TransitionEnabled: " + transitionState + "\n";
+    OutputDebugStringW(isTransitionEnable->Data());
+
+    VisualStateManager::GoToState(this, sPressed ? L"PointerOver" : L"Normal", transitionState);
 }

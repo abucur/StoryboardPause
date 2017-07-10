@@ -7,6 +7,32 @@
 //------------------------------------------------------------------------------
 
 
+namespace Windows {
+    namespace UI {
+        namespace Xaml {
+            ref class VisualStateGroup;
+            ref class VisualState;
+        }
+    }
+}
+namespace Windows {
+    namespace UI {
+        namespace Xaml {
+            namespace Media {
+                ref class SolidColorBrush;
+            }
+        }
+    }
+}
+namespace Windows {
+    namespace UI {
+        namespace Xaml {
+            namespace Controls {
+                ref class TextBlock;
+            }
+        }
+    }
+}
 
 namespace StoryboardPause
 {
@@ -23,6 +49,11 @@ namespace StoryboardPause
     private:
         bool _contentLoaded;
     
+        private: ::Windows::UI::Xaml::VisualStateGroup^ CommonStates;
+        private: ::Windows::UI::Xaml::VisualState^ Normal;
+        private: ::Windows::UI::Xaml::VisualState^ PointerOver;
+        private: ::Windows::UI::Xaml::Media::SolidColorBrush^ ButtonBrush;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ textBlock;
     };
 }
 

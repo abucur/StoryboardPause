@@ -17,5 +17,7 @@ namespace StoryboardPause
 	public:
 		MainPage();
 
-	};
+    private:
+        void Grid_PointerPressed(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e);
+    };
 }

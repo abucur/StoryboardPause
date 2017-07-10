@@ -7,17 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid PointerPressed="Grid_PointerPressed">
+    <Grid x:ConnectionId='1'                                     >
         <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="CommonStates">
+            <VisualStateGroup x:ConnectionId='2' x:Name="CommonStates">
                 <VisualStateGroup.Transitions>
                     <VisualTransition To="PointerOver" 
                               GeneratedDuration="0:0:5"/>
                 </VisualStateGroup.Transitions>
 
-                <VisualState x:Name="Normal" />
+                <VisualState x:ConnectionId='3' x:Name="Normal" />
 
-                <VisualState x:Name="PointerOver">
+                <VisualState x:ConnectionId='4' x:Name="PointerOver">
                     <Storyboard>
                         <ColorAnimation Storyboard.TargetName="ButtonBrush"
                             Storyboard.TargetProperty="Color" To="Red" />
@@ -26,12 +26,13 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <Grid.Background>
-            <SolidColorBrush x:Name="ButtonBrush" Color="Green"/>
+            <SolidColorBrush x:ConnectionId='5' x:Name="ButtonBrush" Color="Green"/>
         </Grid.Background>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="84" Margin="10,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340">
+        <TextBlock x:ConnectionId='6' x:Name="textBlock" HorizontalAlignment="Left" Height="84" Margin="10,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340">
             <Run Text="Left click for animated transition"/>
             <LineBreak/>
             <Run Text="Right click for direct transition"/>
         </TextBlock>
     </Grid>
 </Page>
+

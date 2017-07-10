@@ -24,4 +24,14 @@ using namespace Windows::UI::Xaml::Navigation;
 MainPage::MainPage()
 {
 	InitializeComponent();
+
+    VisualStateManager::GoToState(this, L"Normal", false);
+}
+
+void StoryboardPause::MainPage::Grid_PointerPressed(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e)
+{
+    static bool sPressed = false;
+    sPressed = !sPressed;
+
+    VisualStateManager::GoToState(this, sPressed ? L"PointerOver" : L"Normal", e->GetCurrentPoint(this)->Properties->IsLeftButtonPressed);
 }
